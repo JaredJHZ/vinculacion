@@ -37,7 +37,7 @@
     <ng-container style="margin: 5px;" matColumnDef="eliminar">
         <th class="tb" mat-header-cell *matHeaderCellDef> Eliminar </th>
         <td class="tb" mat-cell *matCellDef="let element"> 
-            <button (click)="eliminar(element.numeroDeControl)" class="button" mat-raised-button color="accent"><i class="material-icons">
+            <button (click)="eliminar(element.id)" class="button" mat-raised-button color="accent"><i class="material-icons">
                 delete
                 </i></button>
         </td>

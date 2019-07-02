@@ -352,6 +352,8 @@ ipcMain.on('delete-maestro', async (event, id) => {
 
     let consultaSQL = `DELETE FROM maestros WHERE id = ${id}; `
 
+    console.log(consultaSQL);
+
 
     db.run(consultaSQL, (err) => {
       if(err) {

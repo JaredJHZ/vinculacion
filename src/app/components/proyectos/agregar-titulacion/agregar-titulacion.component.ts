@@ -46,7 +46,6 @@ export class AgregarTitulacionComponent implements OnInit {
         Promise.all(data).then(
           (x) => {
             this.proyectos = x;
-            console.log(this.proyectos);
             this.dataSource = new MatTableDataSource<any>(this.proyectos);
           
           }
@@ -72,7 +71,7 @@ export class AgregarTitulacionComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-
+      this.getProyectos();
     });
   }
 
