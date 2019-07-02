@@ -1,0 +1,59 @@
+<div class="anterior">
+    <button [routerLink]="['/','menu-proyectos']" mat-fab color="warn"><i class="material-icons">keyboard_backspace</i></button>
+</div>
+
+<div class="card" style="width: 750px !important;">
+<h2 class="center">Formatos de proyectos</h2>
+
+<table style="width: 800px;" *ngIf="proyectos" mat-table [dataSource]="dataSource"  matSort class="mat-elevation-z8">
+
+  <ng-container style="margin: 5px;" matColumnDef="id">
+    <th class="cus" mat-header-cell *matHeaderCellDef>ID del proyecto</th>
+    <td class="cus" mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+ 
+  <ng-container style="margin: 5px;" matColumnDef="nombreDeProyecto">
+    <th class="cus" mat-header-cell *matHeaderCellDef>Nombre del proyecto</th>
+    <td class="cus" mat-cell *matCellDef="let element"> {{element.nombreDelProyecto}} </td>
+  </ng-container>
+
+
+  <ng-container style="margin: 5px;" matColumnDef="numeroDeControl">
+    <th class="cus" mat-header-cell *matHeaderCellDef>Numero de control</th>
+    <td class="cus" mat-cell *matCellDef="let element"> {{element.numeroDeControl}} </td>
+  </ng-container>
+
+  <ng-container style="margin: 5px;" matColumnDef="nombreAlumnos">
+    <th class="cus" mat-header-cell *matHeaderCellDef> Nombre de alumno(s)</th>
+    <td class="cus" mat-cell *matCellDef="let element"> {{element.nombreAlumnos}} </td>
+  </ng-container>
+
+  <ng-container style="margin: 5px;" matColumnDef="tipoDeProyecto">
+    <th class="cus" mat-header-cell *matHeaderCellDef mat-sort-header> Tipo de proyecto</th>
+    <td class="cus" mat-cell *matCellDef="let element"> {{element.tipoDeProyecto}} </td>
+  </ng-container>
+
+  <ng-container style="margin: 5px;" matColumnDef="periodo">
+    <th class="cus" mat-header-cell *matHeaderCellDef mat-sort-header >Periodo</th>
+    <td class="cus" mat-cell *matCellDef="let element"> {{element.periodo}} </td>
+  </ng-container>
+
+  <ng-container style="margin: 2px;" matColumnDef="ir">
+      <th class="cus" mat-header-cell *matHeaderCellDef> Formatos </th>
+      <td class="cus" mat-cell *matCellDef="let element"> 
+        <button class="button" (click)="formats(element.id)" mat-raised-button color="primary"><i class="material-icons">folder</i></button>
+      </td>
+  </ng-container>
+
+
+  <tr style="margin: 5px;" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr style="margin: 5px;" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+<mat-paginator style="width: 800px;" [pageSizeOptions]="[3, 5, 7]" showFirstLascusuttons></mat-paginator>
+
+
+
+
+</div>

@@ -1,0 +1,17 @@
+.formulario {
+    display: flex;
+    flex-flow: column;
+}
+
+
+.login-logo {
+    width: 20%;
+    height: 20%;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}

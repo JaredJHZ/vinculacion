@@ -1,0 +1,89 @@
+
+<div class="card">
+
+<form [formGroup]="proyecto" (ngSubmit)="guardar()">
+
+    <div style="margin-bottom: 20px;" class="nombre">
+        <div class="contain">
+                <mat-form-field class="nameField">
+                        <input (blur)="getEstudianteUno($event)"  formControlName='estudianteUno' name="estudianteUno" matInput placeholder="Estudiante Uno">
+                </mat-form-field>    
+                <div class="aux">
+                        <label for="">{{estudianteUno | length}} </label>
+                </div>
+        </div>
+    
+        <div *ngIf="dosAlumnos" class="contain">
+                <mat-form-field class="nameField">
+                        <input (blur)="getEstudianteDos($event)" (blur)="getEstudianteDos($event)"  formControlName='estudianteDos' name="estudianteDos" matInput placeholder="Estudiante Dos">
+                </mat-form-field>    
+                <div class="aux">
+                        <label for="">{{estudianteDos | length }}</label>
+                </div>
+        </div>    
+        <div class="contain">
+                <button type="button" (click)="openStudents()" mat-button color="primary">Buscar numero de control del alumno</button>
+        </div>
+        
+    </div>
+
+    <div style="margin-bottom: 20px; margin-top: 20px; display: flex; align-items: center; justify-content: center;" class="nombre">
+        <mat-checkbox value="dosAlumnos" (click)="changeValue(dosAlumnos)" color="primary">Dos alumnos</mat-checkbox>
+    </div>
+
+  <div class="nombre">
+      <mat-form-field class="nameField">
+          <input formControlName='nombre' name="nombre" matInput placeholder="Nombre del proyecto">
+        </mat-form-field>
+  </div>
+
+  <div class="nombre">
+    <mat-form-field class="nameField">
+        <input formControlName='periodo' name="periodo" matInput placeholder="Periodo de residencia">
+      </mat-form-field>
+  </div>
+
+  <div class="nombre">
+
+    <div class="contain">
+        <mat-form-field class="nameField">
+            <input (blur)="getAsesor($event)" formControlName='asesor' name="asesor" matInput placeholder="Id del asesor del proyecto">
+        </mat-form-field>    
+        <div class="aux">
+            <label for="">{{asesor  | length}}</label>
+        </div>
+    </div>
+
+    <div class="contain">
+      <mat-form-field class="nameField">
+          <input  formControlName='asesorExterno' name="asesorExterno" matInput placeholder="Asesor externo">
+      </mat-form-field>    
+      <div *ngIf="asesor" class="aux">
+          <label for="">asesor externo</label>
+        </div>
+    </div>
+
+    <div class="contain">
+        <button type="button" (click)="openDialog()" mat-button color="primary">Buscar id del maestro</button>
+    </div>
+
+  </div>
+
+
+<div class="nombre">
+    <div class="contain">
+            <mat-form-field class="nameField">
+                    <input  formControlName='empresa' name="empresa" matInput placeholder="Empresa">
+            </mat-form-field>    
+    </div>
+</div>
+
+
+
+<div class="botonera">
+  <button type="button" [routerLink]="['/','menu-proyectos']" mat-raised-button color="warn">Cancelar</button>
+  <button mat-raised-button color="primary" [disabled]="!proyecto.valid" >Agregar</button>
+</div>
+
+</form>
+</div>

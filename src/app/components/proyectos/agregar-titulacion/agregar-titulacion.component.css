@@ -1,0 +1,11 @@
+.middle {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.cus {
+    width: 35%;
+    text-align: center;
+}

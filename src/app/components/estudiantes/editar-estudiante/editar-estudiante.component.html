@@ -1,0 +1,40 @@
+<h5>Editar estudiante</h5>
+<div class="card">
+    <form [formGroup]="estudiante" (ngSubmit)="editar()">
+        <div formGroupName="nombreCompleto" class="nombre">
+        
+          <mat-form-field class="nameField">
+              <input formControlName='apellidoPaterno'  name="usuario"  matInput placeholder="Apellido paterno">
+          </mat-form-field>
+        
+        
+          <mat-form-field class="nameField">
+              <input formControlName='apellidoMaterno' name="usuario"  matInput placeholder="Apellido materno">
+          </mat-form-field>
+        
+          <mat-form-field class="nameField">
+              <input formControlName='nombre' name="usuario" matInput placeholder="Nombre">
+          </mat-form-field>
+        </div>
+        
+        <div class="nombre">
+            <mat-form-field class="nameField">
+                <input formControlName='planDeEstudios'  name="planDeEstudios"  matInput placeholder="Plan de estudios">
+            </mat-form-field>
+        </div>
+        
+        <div class="nombre">
+            <mat-form-field class="nameField">
+                <input formControlName='semestre'  name="semestre"  matInput placeholder="Semestre">
+            </mat-form-field>
+        </div>
+        
+        
+        <div class="botonera">
+            <button type="button" (click)="onNoClick()"  mat-raised-button color="warn"><i class="material-icons">cancel</i>
+            </button>
+            <button mat-raised-button color="primary" [disabled]="!estudiante.valid" ><i class="material-icons">save</i></button>
+        </div>
+        
+        </form>
+</div>

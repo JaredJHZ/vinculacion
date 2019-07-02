@@ -1,0 +1,23 @@
+<div class="card">
+  <h3>Iniciar sesion</h3>
+  <form class="formulario" (ngSubmit)="login()">
+
+    <div class="center">
+        <img class="login-logo" src="./assets/logo.png" alt="logo">
+    </div>
+
+    <h3>Area de gestión y vinculación ISC</h3>
+
+
+    <mat-form-field class="example-full-width">
+      <input name="usuario" [(ngModel)]="usuario['user']" matInput placeholder="Usuario">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input type="password" name="password" [(ngModel)]="usuario['password']" matInput placeholder="Contraseña">
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Iniciar</button>
+  </form>
+  
+</div>

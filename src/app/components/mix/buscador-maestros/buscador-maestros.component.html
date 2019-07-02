@@ -1,0 +1,37 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar maestro">
+</mat-form-field>
+
+
+
+  <table style="width: 100%;" *ngIf="maestros" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    
+
+      <ng-container style="margin: 5px;" matColumnDef="id">
+          <th class="tb" mat-header-cell *matHeaderCellDef> ID </th>
+          <td class="tb" mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+   
+    <ng-container style="margin: 5px;" matColumnDef="apellidoPaterno">
+      <th class="tb" mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
+      <td class="tb" mat-cell *matCellDef="let element"> {{element.apellidoPaterno}} </td>
+    </ng-container>
+  
+
+    <ng-container style="margin: 5px;" matColumnDef="apellidoMaterno">
+      <th class="tb" mat-header-cell *matHeaderCellDef> Apellido Materno </th>
+      <td class="tb" mat-cell *matCellDef="let element"> {{element.apellidoMaterno}} </td>
+    </ng-container>
+
+    <ng-container style="margin: 5px;" matColumnDef="nombre">
+      <th class="tb" mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td class="tb" mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+    
+    <tr style="margin: 5px;" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr style="margin: 5px;" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+  
+  <mat-paginator [pageSizeOptions]="[3, 5, 10]" showFirstLastButtons></mat-paginator>

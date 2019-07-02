@@ -1,0 +1,36 @@
+<h5>Editar usuario</h5>
+<div class="card">
+        <form [formGroup]="usuario" (ngSubmit)="editar()">
+    
+                <div formGroupName="nombreCompleto" class="nombre">
+            
+                  <mat-form-field class="nameField">
+                      <input formControlName='apellidoPaterno'  name="usuario"  matInput placeholder="Apellido paterno">
+                  </mat-form-field>
+              
+              
+                  <mat-form-field class="nameField">
+                      <input formControlName='apellidoMaterno' name="usuario"  matInput placeholder="Apellido materno">
+                  </mat-form-field>
+            
+                  <mat-form-field class="nameField">
+                      <input formControlName='nombre' name="usuario" matInput placeholder="Nombre">
+                  </mat-form-field>
+                </div>
+            
+                <div class="puesto">
+                    <mat-form-field>
+                        <mat-select  formControlName="puesto" placeholder="Puesto">
+                          <mat-option *ngFor="let puesto of puestos;" value={{puesto}}>{{puesto}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            
+                <div class="botonera">
+                        <button type="button" (click)="onNoClick()"  mat-raised-button color="warn"><i class="material-icons">cancel</i>
+                        </button>
+                        <button mat-raised-button color="primary" [disabled]="!usuario.valid" ><i class="material-icons">save</i></button>
+                </div>
+            
+              </form>
+</div>

@@ -1,0 +1,48 @@
+
+<div class="card">
+<h1>Agregar estudiante</h1>
+
+<form [formGroup]="estudiante" (ngSubmit)="guardar()">
+
+<div class="nombre">
+        <mat-form-field class="nameField">
+                <input formControlName='numeroDeControl'  name="num"  matInput placeholder="Numero de control">
+        </mat-form-field>
+</div>
+
+<div formGroupName="nombreCompleto" class="nombre">
+
+  <mat-form-field class="nameField">
+      <input formControlName='apellidoPaterno'  name="usuario"  matInput placeholder="Apellido paterno">
+  </mat-form-field>
+
+
+  <mat-form-field class="nameField">
+      <input formControlName='apellidoMaterno' name="usuario"  matInput placeholder="Apellido materno">
+  </mat-form-field>
+
+  <mat-form-field class="nameField">
+      <input formControlName='nombre' name="usuario" matInput placeholder="Nombre">
+  </mat-form-field>
+</div>
+
+<div class="nombre">
+    <mat-form-field class="nameField">
+        <input formControlName='planDeEstudios'  name="planDeEstudios"  matInput placeholder="Plan de estudios">
+    </mat-form-field>
+</div>
+
+<div class="nombre">
+    <mat-form-field class="nameField">
+        <input formControlName='semestre'  name="semestre"  matInput placeholder="Semestre">
+    </mat-form-field>
+</div>
+
+
+<div class="botonera">
+    <button type="button" [routerLink]="['/','menu-estudiantes']" mat-raised-button color="warn">Cancelar</button>
+    <button mat-raised-button color="primary" [disabled]="!estudiante.valid" >Agregar</button>
+</div>
+
+</form>
+</div>

@@ -1,0 +1,55 @@
+<div class="anterior">
+    <button [routerLink]="['/','menu-usuarios']" mat-fab color="warn"><i class="material-icons">keyboard_backspace</i></button>
+</div>
+
+<div class="container">
+    <div class="card" style="width: 100%;">
+        <h2 class="center">Administrar usuarios</h2>
+        <table style="width: 100%;" *ngIf="usuarios" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+         
+          <ng-container style="margin: 5px;" matColumnDef="apellidoPaterno">
+            <th class="tb" mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
+            <td class="tb" mat-cell *matCellDef="let element"> {{element.apellidoPaterno}} </td>
+          </ng-container>
+        
+      
+          <ng-container style="margin: 5px;" matColumnDef="apellidoMaterno">
+            <th class="tb" mat-header-cell *matHeaderCellDef> Apellido Materno </th>
+            <td class="tb" mat-cell *matCellDef="let element"> {{element.apellidoMaterno}} </td>
+          </ng-container>
+      
+          <ng-container style="margin: 5px;" matColumnDef="nombre">
+            <th class="tb" mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td class="tb" mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+          </ng-container>
+       
+      
+          <ng-container style="margin: 2px;" matColumnDef="editar">
+              <th class="tb" mat-header-cell *matHeaderCellDef> Editar </th>
+              <td class="tb" mat-cell *matCellDef="let element"> 
+                <button class="button" (click)="openDialog(element)" mat-raised-button color="primary"><i class="material-icons">edit</i></button>
+              </td>
+          </ng-container>
+      
+          <ng-container style="margin: 5px;" matColumnDef="eliminar">
+              <th class="tb" mat-header-cell *matHeaderCellDef> Eliminar </th>
+              <td class="tb" mat-cell *matCellDef="let element"> 
+                  <button (click)="eliminar(element.id)" class="button" mat-raised-button color="accent"><i class="material-icons">
+                      delete
+                      </i></button>
+              </td>
+          </ng-container>
+       
+          <tr style="margin: 5px;" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr style="margin: 5px;" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+        </table>
+        
+        <mat-paginator [pageSizeOptions]="[3, 5, 10]" showFirstLastButtons></mat-paginator>
+        
+        
+        
+      
+      </div>
+</div>

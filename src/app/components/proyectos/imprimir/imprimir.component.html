@@ -1,0 +1,89 @@
+<div class="anterior">
+    <button [routerLink]="['/','formatos']" mat-fab color="warn"><i class="material-icons">keyboard_backspace</i></button>
+</div>
+<div style="width: 750px;">
+    <div class="card" *ngIf="proyecto">
+        <div class="center">
+          <h1> <small>Nombre del proyecto:</small>  {{proyecto.nombreDelProyecto}}</h1>
+          <h5>Asesor: {{proyecto.asesor}}</h5>
+          <h5>Secreatario: {{proyecto.secretario}}</h5>
+          <h5>Vocal: {{proyecto.vocal}}</h5>
+          <h5>Vocal suplente {{proyecto.vocalSuplente}}</h5>
+        </div>
+      
+        <div >
+          <table style="width: 100%;"  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+            <ng-container style="margin: 5px;" matColumnDef="numeroDeControl">
+              <th class="cus" mat-header-cell *matHeaderCellDef> Numero de control </th>
+              <td class="cus" mat-cell *matCellDef="let element"> {{element.numeroDeControl}} </td>
+            </ng-container>
+          
+        
+            <ng-container style="margin: 5px;" matColumnDef="nombre">
+              <th class="cus" mat-header-cell *matHeaderCellDef> Nombre del alumno </th>
+              <td class="cus" mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+        
+         
+            <tr style="margin: 5px;" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr style="margin: 5px;" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+        <h3 style="text-align: center;">Documentos de residencias</h3>
+
+        <div class="residencias">
+            
+            <div class="boton">
+              <button (click)="actaCalificacion()"  mat-flat-button color="primary">Acta de calificacion</button>
+            </div>
+            <div class="boton">
+                <button (click)="actaAsesor()"  mat-flat-button color="primary">Acta de asesor</button>
+              </div>
+        
+        </div>
+
+        <h3 style="text-align: center;">Documentos de titulacion</h3>
+      
+        <div class="titulacion" *ngIf="proyecto.secretario">
+          
+          <div class="boton" *ngIf="alumnos.length < 2">
+            <button (click)="anexoUnoUnEstudiante()"  mat-flat-button color="primary">Anexo 1</button>
+          </div>
+          <div class="boton" *ngIf="alumnos.length >= 2">
+              <button (click)="anexoUnoDosEstudiantes()"  mat-flat-button color="primary">Anexo 1</button>
+            </div>
+          <div class="boton" *ngIf="alumnos.length < 2">
+              <button (click)="asesorUnEstudiante()"  mat-flat-button color="primary">Notificacion de asesor</button>
+          </div>
+
+          <div class="boton" *ngIf="alumnos.length >= 2">
+              <button (click)="notificacionAsesorDosEstudiantes()"  mat-flat-button color="primary">Notificacion de asesor</button>
+          </div>
+
+          
+          <div class="boton" *ngIf="alumnos">
+              <button (click)="anexoB()"  mat-flat-button color="primary">Anexo b</button>
+          </div>
+          <div class="boton" *ngIf="alumnos.length < 2">
+              <button (click)="revisoresUno()"  mat-flat-button color="primary">Solicitud de Revisores</button>
+          </div>
+          <div class="boton" *ngIf="alumnos.length >= 2">
+              <button (click)="solicitudRevisoresDosEstudiantes()"  mat-flat-button color="primary">Solicitud de Revisores</button>
+            </div>
+          <div class="boton" *ngIf="alumnos.length < 2">
+              <button (click)="notificacionRevisoresUno()"  mat-flat-button color="primary">Notificacion de Revisores</button>
+          </div>
+          <div class="boton" *ngIf="alumnos.length >= 2">
+              <button (click)="notificacionRevisoresDosEstudiantes()"  mat-flat-button color="primary">Notificacion de Revisores</button>
+          </div>
+
+          <div class="boton" *ngIf="alumnos">
+              <button (click)="anexoTres()"  mat-flat-button color="primary">Anexo tres</button>
+          </div>
+
+        </div>
+      
+      
+      </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="anterior">
+    <button [routerLink]="['/','menu-proyectos']" mat-fab color="warn"><i class="material-icons">keyboard_backspace</i></button>
+</div>
+<div class="middle">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar proyecto">
+  </mat-form-field>
+</div>
+  
+  <h3>Agregar asesores para iniciar tramite de titulacion</h3>
+  
+    <table style="width: 100%;" *ngIf="proyectos" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      
+  
+        <ng-container style="margin: 5px;" matColumnDef="nombre">
+            <th class="cus" mat-header-cell *matHeaderCellDef> Nombre del proyecto </th>
+            <td class="cus" mat-cell *matCellDef="let element">{{element.nombre}}</td>
+          </ng-container>
+     
+      <ng-container style="margin: 5px;" matColumnDef="alumno">
+        <th class="cus" mat-header-cell *matHeaderCellDef> Alumno </th>
+        <td class="cus" mat-cell *matCellDef="let element"> {{element.alumno}}</td>
+      </ng-container>
+    
+      <ng-container style="margin: 2px;" matColumnDef="agregar">
+          <th class="cus" mat-header-cell *matHeaderCellDef> Agregar a titulacion</th>
+          <td class="cus" mat-cell *matCellDef="let element"> 
+            <button class="button" (click)="openDialog(element)" mat-raised-button color="primary"><i class="material-icons">edit</i></button>
+          </td>
+      </ng-container>
+      
+      <tr style="margin: 5px;" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr style="margin: 5px;" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

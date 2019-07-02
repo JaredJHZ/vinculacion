@@ -1,0 +1,33 @@
+
+.password{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.puesto{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.nombre {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.nombre input {
+    margin: 1%;
+}
+
+.nameField {
+    margin: 2%;
+}
+
+.administrar {
+    cursor: pointer;
+}

@@ -1,0 +1,42 @@
+<h5>Administrar titulacion</h5>
+<div class="card">
+        <form [formGroup]="informacionDeTitulacion" (ngSubmit)="guardar()">
+    
+                <div class="nombre">
+            
+                <mat-form-field class="nameField">
+                      <input formControlName='secretario'  name="usuario"  matInput placeholder="ID del Secretario">
+                </mat-form-field>
+              
+              
+                  <mat-form-field class="nameField">
+                      <input formControlName='vocal' name="usuario"  matInput placeholder="ID del Vocal">
+                  </mat-form-field>
+            
+                  <mat-form-field class="nameField">
+                      <input formControlName='vocalSuplente' name="usuario" matInput placeholder="ID del Vocal Suplente">
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <mat-select  formControlName="tipoDeProyecto" placeholder="Tipo de proyecto">
+                      <mat-option *ngFor="let tipo of tipos;" value={{tipo}}>{{tipo}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div style="display:flex; justify-content:center; align-items:center;">
+                  <button class="but" type="button" (click)="openDialog()" mat-button color="primary">Buscar maestro</button>
+                </div>
+
+
+
+
+                </div>
+
+                <div class="botonera">
+                    <button type="button" (click)="onNoClick()" mat-raised-button color="warn"><i class="material-icons">cancel</i>
+                    </button>
+                    <button mat-raised-button color="primary" [disabled]="!informacionDeTitulacion.valid" ><i class="material-icons">save</i></button>
+                </div>
+            
+              </form>
+</div>

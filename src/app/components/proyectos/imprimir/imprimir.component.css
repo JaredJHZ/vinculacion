@@ -1,0 +1,20 @@
+.boton {
+    margin: 10px;
+}
+
+.residencias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cus {
+    width: 35%;
+    text-align: center;
+}

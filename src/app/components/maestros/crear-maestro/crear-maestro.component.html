@@ -1,0 +1,34 @@
+
+<div class="card">
+<h1>Crear maestro</h1>
+
+<form [formGroup]="maestro" (ngSubmit)="guardar()">
+
+<div formGroupName="nombreCompleto" class="nombre">
+
+   <mat-form-field class="nameField">
+        <input formControlName='titulo' name="titulo" matInput placeholder="Titulo del profesor">
+   </mat-form-field>
+
+  <mat-form-field class="nameField">
+      <input formControlName='apellidoPaterno'  name="usuario"  matInput placeholder="Apellido paterno">
+  </mat-form-field>
+
+
+  <mat-form-field class="nameField">
+      <input formControlName='apellidoMaterno' name="usuario"  matInput placeholder="Apellido materno">
+  </mat-form-field>
+
+  <mat-form-field class="nameField">
+      <input formControlName='nombre' name="usuario" matInput placeholder="Nombre">
+  </mat-form-field>
+
+</div>
+
+<div class="botonera">
+    <button type="button" [routerLink]="['/','menu-usuarios']" mat-raised-button color="warn">Cancelar</button>
+    <button mat-raised-button color="primary" [disabled]="!maestro.valid" >Agregar</button>
+</div>
+
+</form>
+</div>

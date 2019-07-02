@@ -1,0 +1,50 @@
+<div class="card">
+
+   <div class="container">
+         <div *ngIf="admin" class="seleccion">
+               <h3 class="center">Usuarios</h3>
+               <div class="image-container">
+                  <img class="image" mat-card-image src="./assets/Usuario.png" alt="Photo of a Shiba Inu">
+               </div>
+               <div class="item-container">
+                  <button mat-button color="primary" [routerLink]="['/menu-usuarios']">IR</button>
+               </div>
+             </div>
+            
+             <div class="seleccion">
+                  <h3 class="center">Maestros</h3>
+                  <div class="image-container">
+                     <img class="image" mat-card-image src="./assets/teacher.png" alt="Photo of a Shiba Inu">
+                  </div>
+                  <div class="item-container">
+                     <button mat-button color="primary" [routerLink]="['/menu-maestros']">IR</button>
+                  </div>
+                </div>
+
+                <div class="seleccion">
+                     <h3 class="center">Estudiantes</h3>
+                     <div class="image-container">
+                        <img class="image" mat-card-image src="./assets/estudiantes.png" alt="Photo of a Shiba Inu">
+                     </div>
+                     <div class="item-container">
+                        <button mat-button color="primary" [routerLink]="['/menu-estudiantes']">IR</button>
+                     </div>
+                   </div>
+
+               <div class="seleccion">
+                     <h3 class="center">Proyectos</h3>
+                     <div class="image-container">
+                        <img class="image" mat-card-image src="./assets/proyectos.png" alt="Photo of a Shiba Inu">
+                     </div>
+                     <div class="item-container">
+                        <button mat-button color="primary" [routerLink]="['/menu-proyectos']">IR</button>
+                     </div>
+               </div>
+
+   </div>
+
+<div class="back">
+   <img src="./assets/logo.jpeg" >
+</div>
+
+</div>
