@@ -33,7 +33,7 @@
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "commonjs": "0.0.1",
     "docx-templates": "^3.0.0",
     "material-design-icons": "^3.0.1",
